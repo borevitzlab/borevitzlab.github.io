@@ -25,7 +25,9 @@ FASTA_TO_SORT=somefile.fasta
 test -f ${FASTA_TO_SORT}.fai || samtools faidx ${FASTA_TO_SORT})
 
 # Grab out the sequences by name in the correct order.
-samtools faidx ${FASTA_TO_SORT} $(cut -f1 ${FASTA_TO_SORT}.fai | sort -n) > file_sorted.fasta
+samtools faidx ${FASTA_TO_SORT} \
+    $(cut -f1 ${FASTA_TO_SORT}.fai | sort -n) \
+    > file_sorted.fasta
 ```
 
 The beauty of this is that it uses very little RAM even on huge references, as it uses `samtools faidx` to perform random access into the fasta file.
