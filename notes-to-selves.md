@@ -1,4 +1,3 @@
-
 # Notes to ourselves
 
 >  Tips, tricks and gotchas for our future selves.
