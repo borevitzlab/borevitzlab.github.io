@@ -1,3 +1,7 @@
+---
+layout: frontpage
+---
+
 # The Borevitz Lab github site
 
 This is *not* the main borevitz lab website, that is <borevitzlab.anu.edu.au>. However, there are some tidbits here of use:
