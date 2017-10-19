@@ -8,10 +8,12 @@
 IGV will not take the bcf, and it will only take a vcf if it is gz compressed and if the file ending is vcf.gz.
 
 ```bash
-bcftools view -Ov freebayes.bcf > freebayes.vcf
-bgzip freebayes.vcf
-tabix freebayes.vcf.gz
+file=freebayes.bcf
+bcftools view -Ov ${file} > ${file%%.bcf}.vcf
+bgzip ${file%%.bcf}.vcf
+tabix ${file%%.bcf}.vcf.gz
 ```
+See [this](http://www.genome.ucsc.edu/goldenPath/help/vcf.html) for more info! See [below](#bash-variable-magic) if you're not sure what's happening in the curly braces.
 
 
 # Sorting a multi-fasta file by name
@@ -31,3 +33,15 @@ samtools faidx ${FASTA_TO_SORT} \
 ```
 
 The beauty of this is that it uses very little RAM even on huge references, as it uses `samtools faidx` to perform random access into the fasta file.
+
+# Bash variable magic
+
+## Remove extension:
+
+```
+fn=test.ext
+bn=${fn%%.ext}
+echo "basename of $fn is $bn"
+```
+
+The [TLDP site](http://www.tldp.org/LDP/abs/html/string-manipulation.html) has as bunch of great resources for this
