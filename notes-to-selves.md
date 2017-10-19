@@ -5,7 +5,7 @@
 
 # Reading BCFs in IGV
 
-IGV will not take the bcf, and it will only take a vcf if it is gz compressed and if the file ending is vcf.gz.
+IGV will not take the bcf, and it will only take a vcf if it is bgzip compressed and if the file ending is vcf.gz and has a tabix index.
 
 ```bash
 file=freebayes.bcf
