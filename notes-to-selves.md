@@ -45,3 +45,14 @@ echo "basename of $fn is $bn"
 ```
 
 The [TLDP site](http://www.tldp.org/LDP/abs/html/string-manipulation.html) has as bunch of great resources for this
+
+
+# Raijin Rmpi
+
+You need to install it with:
+
+```R
+install.packages("Rmpi", configure.args=c("--with-Rmpi-include=/apps/openmpi/1.6.3/include",
+                                          "--with-Rmpi-libpath=/apps/openmpi/1.6.3/lib",
+                                          "--with-Rmpi-type=OPENMPI"))
+```
